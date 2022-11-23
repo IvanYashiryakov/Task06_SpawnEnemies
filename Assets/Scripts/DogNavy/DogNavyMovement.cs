@@ -3,6 +3,7 @@ using UnityEngine;
 public class DogNavyMovement : MonoBehaviour
 {
     private float _speed = 5;
+    private float _killZoneY = -6;
 
     void Start()
     {
@@ -14,7 +15,7 @@ public class DogNavyMovement : MonoBehaviour
     {
         transform.position += new Vector3(_speed * Time.deltaTime, 0, 0);
 
-        if (transform.position.y < -6)
+        if (transform.position.y < _killZoneY)
         {
             Destroy(gameObject);
         }
